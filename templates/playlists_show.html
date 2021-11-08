@@ -8,4 +8,6 @@
 {% for video in playlist.videos %}
     <iframe width='420' height='315' src='{{ video }}'></iframe>
 {% endfor %}
+<!-- WTF is this link supposed to be??? /playlists/id/edit or just id/edit -->
+<p><a href = "{{ playlist._id }}/edit">Edit</a></p>
 {% endblock %}
