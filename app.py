@@ -32,7 +32,6 @@ def playlists_new():
 # Note the methods parameter that explicitly tells the route that this is a POST
 @app.route('/playlists', methods=['POST'])
 def playlists_submit():
-
     """Submit a new playlist."""
     # Grab the video IDs and make a list out of them
     video_ids = request.form.get('video_ids').split()
@@ -46,7 +45,6 @@ def playlists_submit():
     }
     playlists.insert_one(playlist)
     return redirect(url_for('playlists_index'))
-
 
 
 if __name__ == '__main__':
