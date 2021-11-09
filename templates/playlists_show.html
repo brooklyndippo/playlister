@@ -10,4 +10,9 @@
 {% endfor %}
 <!-- WTF is this link supposed to be??? /playlists/id/edit or just id/edit -->
 <p><a href = "{{ playlist._id }}/edit">Edit</a></p>
+
+<!-- Delete button -->
+<p><form method='POST' action='/playlists/{{ playlist._id }}/delete'>
+    <button type='submit'>Delete</button>
+</form></p>
 {% endblock %}
