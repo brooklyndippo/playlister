@@ -1,3 +1,7 @@
+# command python3 -m flask run
+# localhost:5000
+
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask.templating import render_template
 from pymongo import MongoClient
@@ -28,9 +32,11 @@ def playlists_index():
 @app.route('/playlists/new')
 def playlists_new():
     """Create a new playlist."""
-    return render_template('playlists_new.html')
-    
+    playlist = {}
+    # Add the title parameter here
+    return render_template('playlists_new.html', playlist=playlist, title='New Playlist')
 
+    
 
 # CREATE A PLAYLIST
 @app.route('/playlists', methods=['POST'])
