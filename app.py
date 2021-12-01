@@ -6,6 +6,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask.templating import render_template
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+from datetime import datetime
 
 client = MongoClient()
 db = client.Playlister
@@ -51,7 +52,8 @@ def playlists_submit():
         'title': request.form.get('title'),
         'description': request.form.get('description'),
         'videos': videos,
-        'video_ids': video_ids
+        'video_ids': video_ids,
+        'created_at': datetime.now()
     }
     playlists.insert_one(playlist)
     #upddate redirect to the new playlist
