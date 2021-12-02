@@ -7,6 +7,7 @@ from flask.templating import render_template
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
+import os
 
 host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Playlister')
 client = MongoClient(host=host)
